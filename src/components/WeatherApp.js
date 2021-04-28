@@ -24,8 +24,8 @@ const WeatherApp = ({ city }) => {
         console.log(data)
         setLocation(`${data.name}, ${data.sys.country}`)
         setConditions({
-          feelsLike: Math.round(data.main.feels_like) / 10,
-          mainTemp: Math.round(data.main.temp) / 10,
+          feelsLike: Math.round(data.main.feels_like - 273.15),
+          mainTemp: Math.round(data.main.temp - 273.15),
           humidity: data.main.humidity
         })
         setDescription(data.weather[0].description)
